@@ -21,6 +21,7 @@ html {
 body {
  background-color: #fafafa;
  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+ height: 100%
 }
 
 /* ## NAVBAR CUSTOMISATIONS ## */
@@ -185,7 +186,7 @@ body {
 .registration-bg {
  padding-top: 4em;
  height: 100%;
- background-image: image-url('https://unsplash.com/?photo=TPv9dh822VA');
+ background-image: image-url('starrynight.jpg');
  -moz-background-size: cover;
  -webkit-background-size: cover;
  -o-background-size: cover;
