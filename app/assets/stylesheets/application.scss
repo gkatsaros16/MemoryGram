@@ -186,11 +186,21 @@ body {
 .registration-bg {
  padding-top: 4em;
  height: 100%;
- background-image: image-url('starrynight.jpg');
+ background-image: image-url('registerbg.jpg');
  -moz-background-size: cover;
  -webkit-background-size: cover;
  -o-background-size: cover;
  background-size: cover;
+}
+
+.login-bg {
+  padding-top: 4em;
+  height: 100%;
+  background-image: image-url('loginbg.jpg');
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .log-in {
@@ -209,3 +219,9 @@ body {
    text-align: center;
  }
 }
+
+// .links {
+//   border: 2px solid black;
+//   display: flex;
+//   display: inline-block;
+// }
