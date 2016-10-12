@@ -5,10 +5,8 @@ class CommentsController < ApplicationController
   def create
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
-
     #We build  the  new @comment object and then assign it the user_name field
     #based on the user currently logged in.
-
     if @comment.save
       respond_to do |format|
         format.html { redirect_to root_path }

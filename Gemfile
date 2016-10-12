@@ -58,3 +58,5 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'haml'
 
 gem 'devise'
+
+gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
