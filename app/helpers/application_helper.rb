@@ -7,3 +7,10 @@ module ApplicationHelper
     }[flash_type.to_sym] || flash_type.to_s
   end
 end
+
+def form_image_select(post)
+  return image_tag post.image.url(:medium),
+                   id: 'image-preview',
+                   class: 'img-responsive' if post.image.exists?
+  image_tag 'anime.png', id: 'image-preview', class: 'img-responsive'
+end

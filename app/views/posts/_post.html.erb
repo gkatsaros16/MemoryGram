@@ -1,0 +1,51 @@
+<div class="posts-wrapper row">
+  <div class="post">
+    <div class="post-head">
+      <div class="thumb-img"></div>
+      <div class="user-name">
+        <%= post.user.user_name %>
+      </div>
+    </div>
+    <div class="image center-block">
+      <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
+    </div>
+    <div class="post-bottom">
+      <div class="caption">
+        <div class="caption-content">
+          <div class="user-name">
+            <%= post.user.user_name %>
+          </div>
+          <%= post.caption %>
+        </div>
+
+        <% if post.comments.size <= 4 %>
+          <div class="comments" id="comments_<%= post.id %>">
+            <%= render post.comments, post: post %>
+          </div>
+        <% else %>
+          <div class="comments" id="comments_<%= post.id %>">
+            <%= render post.comments[-4..-1], post: post %>
+          </div>
+        <% end %>
+
+        <div class="more-comments">
+          <p><%= link_to "show all comments", post_comments_path(post) %></p>
+        </div>
+
+      </div>
+      <div class="time-ago">
+        <p><%= "posted #{time_ago_in_words(post.created_at)} ago" %></p>
+      </div>
+    </div>
+    <div class="comment-like-form row">
+      <div class="like-button col-sm-1">
+        <span class="glyphicon glyphicon-heart-empty"> </span>
+      </div>
+      <div class="comment-form col-sm-11">
+        <%= form_for([post, post.comments.build], remote: true) do |f| %>
+          <%= f.text_field :content, placeholder: 'Add comment', class: "comment_content", id: "comment_content_#{post.id}" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
