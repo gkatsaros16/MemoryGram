@@ -60,3 +60,5 @@ gem 'haml'
 gem 'devise'
 
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+
+gem 'jquery-turbolinks'

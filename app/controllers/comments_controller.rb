@@ -2,6 +2,14 @@ class CommentsController < ApplicationController
   before_action :set_post # We’re  just  settingthe @post instance variable to
   #the post from the Post model based on the post_id params.
 
+  def index
+    @comments = @post.comments.order("created_at ASC")
+
+    respond_to do |format|
+      format.html { render layout: !request.xhr? }
+    end
+  end
+
   def create
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
