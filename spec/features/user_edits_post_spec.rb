@@ -4,10 +4,7 @@ feature 'Edits posts' do
   background do
     @user = FactoryGirl.create(:user)
     @user_2 = FactoryGirl.create(:user)
-    visit '/'
-    fill_in 'Email', with: @user.email
-    fill_in 'Password', with: @user.password
-    click_button 'Log in'
+    sign_in_with @user
     click_link 'New Post'
     attach_file('post[image]', "spec/files/images/tester.jpg")
     fill_in 'post[caption]', with: "check check #tester"
@@ -25,26 +22,26 @@ feature 'Edits posts' do
   end
   scenario "User is unable to see edit link on a post that's not yours" do
     click_link ('Logout')
-    visit '/'
-    fill_in 'Email', with: @user_2.email
-    fill_in 'Password', with: @user_2.password
-    click_button 'Log in'
+    sign_in_with @user_2
     visit post_path(@post)
     expect(page).to_not have_content('Edit Post')
   end
   scenario "User is unable to see edit view by typing the url of a post that's not yours" do
     click_link ('Logout')
-    visit '/'
-    fill_in 'Email', with: @user_2.email
-    fill_in 'Password', with: @user_2.password
-    click_button 'Log in'
+    sign_in_with @user_2
     visit edit_post_path(@post)
     expect(page).to have_content("That post doesn't belong to you!")
   end
-  scenario "User is able to see delete their own post" do
+  scenario "User is able to delete their own post" do
     visit edit_post_path(@post)
     click_button 'Delete Post'
     expect(page).to have_content('Post successfully deleted!')
     expect(page).to_not have_content('check check #tester')
+  end
+  scenario "User is not able to delete another users post" do
+    click_link ('Logout')
+    sign_in_with @user_2
+    visit edit_post_path(@post)
+    expect(page).to_not have_button('Delete Post')
   end
 end
