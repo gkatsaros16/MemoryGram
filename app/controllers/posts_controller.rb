@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user! #devis
-  before_action :set_post, only: [:show, :edit, :update, :destroy] #sets the c
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like] #sets the c
   before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
@@ -56,6 +56,12 @@ class PostsController < ApplicationController
   end
 
   def like
+    if @post.liked_by current_user
+      respond_to do |format|
+        format.html { redirect_to :back }
+        format.js
+      end
+    end
   end
 
   private
