@@ -14,6 +14,12 @@
               <h4>Upload an image (this is required):</h4>
               <%= f.input :image, label: false, input_html: { onChange: 'loadFile(event)' } %>
             </div>
+            <div class="form-group text-center collection">
+              <%= f.input :post_type, collection: ['Article', 'Image'] %>
+            </div>
+            <div class="form-group text-center">
+              <%= f.input :link, label: false, placeholder: 'Link to article' %>
+            </div>
             <div class="form-group text-center">
               <%= f.input :caption, label: false, placeholder: 'Add your caption' %>
             </div>

@@ -2,14 +2,31 @@
   <div class="post">
     <div class="post-head">
       <div class="thumb-img">
+        <% if post.post_type == 'Image' %>
+          <div class="post-type-image">
+            <%= post.post_type %>
+          </div>
+        <% else %>
+          <div class="post-type-article">
+            <%= post.post_type %>
+          </div>
+        <% end %>
         <div class="user-name">
           <%= link_to post.user.user_name, profile_path(post.user.user_name) %>
         </div>
       </div>
     </div>
-    <div class="image center-block">
-      <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
-    </div>
+
+    <% if post.post_type == 'Image' %>
+      <div class="image center-block glowing-border-image">
+        <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
+      </div>
+    <% else %>
+      <div class="image center-block glowing-border-article">
+        <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post.link %>
+      </div>
+    <% end %>
+    
     <div class="post-bottom">
       <div class="caption">
         <div class="caption-content">
@@ -39,6 +56,7 @@
         <div class="comment-form col-sm-11">
           <%= form_for([post, post.comments.build], remote: true) do |f| %>
             <%= f.text_field :content, placeholder: 'Add comment', class: "comment_content", id: "comment_content_#{post.id}" %>
+            <%= f.button "Submit Comment", class: 'btn-success btn-block', id: 'comment_submit' %>
           <% end %>
         </div>
       </div>
