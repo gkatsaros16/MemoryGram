@@ -67,3 +67,4 @@ gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'ma
 gem 'jquery-turbolinks'
 
 gem 'capybara'
+gem "capybara-webkit"

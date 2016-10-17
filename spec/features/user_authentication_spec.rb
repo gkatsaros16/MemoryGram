@@ -5,9 +5,7 @@ feature 'User authentication' do
     user = create(:user)
     visit '/'
     expect(page).to_not have_content('New Post')
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    sign_in_with user
   end
   scenario 'logs in successfully from the navbar' do
     expect(page).to have_content('Signed in successfully.')

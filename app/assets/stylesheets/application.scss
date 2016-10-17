@@ -70,6 +70,14 @@ body {
    color: 125688;
    font-size: 15px;
    line-height: 18px;
+   .post-type-article {
+    float: right;
+    color: #8dd69d;
+   }
+   .post-type-image {
+    float: right;
+    color: #9ecaed;
+   }
    .user-name, .time-ago {
      display: inline;
    }
@@ -128,24 +136,28 @@ body {
  line-height: 18px;
 }
 
-.comment-content {
- font-size: 15px;
- line-height: 18px;
- border: medium none;
- width: 100%;
- color: #4B4F54;
-}
+
 
 .comment-like-form {
- padding-top: 24px;
- margin-top: 24px;
- margin-left: 24px;
- margin-right: 24px;
- min-height: 68px;
- align-items: center;
- border-top: 1px solid #EEEFEF;
- flex-direction: row;
- justify-content: center;
+  padding-top: 24px;
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
+  min-height: 68px;
+  align-items: center;
+  border-top: 1px solid #EEEFEF;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.comment_content {
+  text-align: center;
+  font-size: 15px;
+  line-height: 23px;
+  border: medium none;
+  width: 100%;
+  color: #4B4F54;
+  border: 1px solid gray;
 }
 
 .glyphicon-heart-empty {
@@ -231,7 +243,7 @@ body {
 
 #post_image {
   padding: 1em;
-  margin: 0px auto;
+  margin-left: 35%;
 }
 
 #paginator {
@@ -267,7 +279,8 @@ body {
 }
 
 #user_avatar {
-  margin: 20px auto;
+  margin: 15px auto;
+  margin-right: 140px;
 }
 
 .profile-header {
@@ -297,6 +310,58 @@ body {
 .profile-bio {
   margin-top: 20px;
 }
+
+#comment_submit {
+  width: 100%;
+  margin: auto;
+}
+
+.select {
+  margin: auto;
+  width: 45%
+}
+
+.glowing-border-article {
+    border: 1px solid #dadada;
+}
+
+.glowing-border-article:hover {
+    outline: none;
+    border-color: #8dd69d;
+    box-shadow: 0 0 25px #8dd69d;
+}
+
+.glowing-border-image {
+    border: 1px solid #dadada;
+}
+
+.glowing-border-image:hover {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 25px #9ecaed;
+}
+.error {
+  color: red;
+}
+
+.error_notification {
+  background-color: #ffccc0;
+  color: red;
+  height: 50px;
+  text-align: center;
+}
+#post_link {
+  width: 100%;
+}
+
+#post_caption {
+  width: 100%;
+}
+
+#user_bio {
+  width: 50%;
+}
+
 // .links {
 //   border: 2px solid black;
 //   display: flex;
