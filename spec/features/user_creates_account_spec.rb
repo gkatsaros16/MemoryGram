@@ -7,7 +7,7 @@ feature 'Creating a new user' do
   end
   scenario 'Ability to create a new user via the redirected page' do
     fill_in 'User Name', with: 'Ghoul'
-    fill_in 'Email', with: 'Kaneki@tokyoghoul.com'
+    fill_in 'Email', with: 'Kaneki3@tokyoghoul.com'
     fill_in 'Password', with: 'cochelealevelsecurity'
     fill_in 'Confirm Password', with: 'cochelealevelsecurity'
     click_button('Sign up')
