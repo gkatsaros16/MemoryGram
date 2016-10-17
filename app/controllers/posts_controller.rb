@@ -29,6 +29,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @prevent = false
     # @post = Post.find(params[:id])
   end
 
