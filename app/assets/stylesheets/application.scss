@@ -128,7 +128,7 @@ body {
  }
  word-wrap: break-word;
  margin-bottom: 7px;
- padding-top: 24px;
+ padding-top: 15px;
  padding-left: 24px;
  padding-right: 24px;
  padding-bottom: 10px;
@@ -162,6 +162,12 @@ body {
 
 .glyphicon-heart-empty {
  color: black;
+ font-size: 35px;
+ float: left;
+}
+
+.glyphicon-heart {
+  font-size: 35px;
 }
 
 /* ## Wrapper and styling for the new and edit views ## */
@@ -363,7 +369,7 @@ body {
 }
 
 .likes {
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 7px;
 }
 
