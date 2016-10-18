@@ -1,0 +1,5 @@
+<% @posts.each do |post| %>
+  <% if post.post_type == 'Article' %>
+    <%= render 'post', post: post %>
+  <% end %>
+<% end %>
