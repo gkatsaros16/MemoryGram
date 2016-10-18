@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user! #devis
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :like] #sets the c
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like]
   before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
