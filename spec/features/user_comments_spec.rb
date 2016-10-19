@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "user is able to comment on posts." do
-  background do
+  before do
     @user = FactoryGirl.create(:user)
     @user_2 = FactoryGirl.create(:user)
     @post = FactoryGirl.create(:post)

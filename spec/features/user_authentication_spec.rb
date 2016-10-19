@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'User authentication' do
-  background do
+  before do
     user = create(:user)
     visit '/'
     expect(page).to_not have_content('New Post')

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "post owner receives notification when user comments on post." do
-  background do
+  before do
     @user = FactoryGirl.create(:user)
     @user_2 = FactoryGirl.create(:user)
     @post = FactoryGirl.create(:post, user_id: @user.id)

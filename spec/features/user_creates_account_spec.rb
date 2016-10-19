@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Creating a new user' do
-  background do
+  before do
     visit '/'
     click_link('Register')
   end

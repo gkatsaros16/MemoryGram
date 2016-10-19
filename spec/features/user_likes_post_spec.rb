@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature "User likes a post" do
-  background do
+  before do
     @user = FactoryGirl.create(:user)
     @post = FactoryGirl.create(:post, user_id: @user.id)
     sign_in_with @user
