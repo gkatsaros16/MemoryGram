@@ -1,3 +1,9 @@
-<li>
-  <%= link_to "#{notification.notified_by.user_name} #{notification.notif_type}ed on your post", post_path(notification.post) %>
-</li>
+<% if notification.read %>
+  <li >
+    <%= link_to "#{notification.notified_by.user_name} #{notification.notif_type}ed on your post #{time_ago_in_words(notification.created_at)} ago", link_through_path(notification) %>
+  </li>
+<% else %>
+  <li class="unread">
+    <%= link_to "#{notification.notified_by.user_name} #{notification.notif_type}ed on your post #{time_ago_in_words(notification.created_at)} ago", link_through_path(notification) %>
+  </li>
+<% end %>

@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 feature 'editing user profiles' do
   background do
     @user = FactoryGirl.create(:user)

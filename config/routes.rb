@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'notifications/link_through'
+  get 'notifications/:id/link_through', to: 'notifications#link_through',
+                                        as: :link_through
+
+  get 'notifications', to: 'notifications#index'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
