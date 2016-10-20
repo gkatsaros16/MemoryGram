@@ -10,4 +10,8 @@ class NotificationsController < ApplicationController
     end
     redirect_to post_path @notification.post
   end
+
+  def index
+    @notifications = current_user.notifications.order('created_at DESC').page params[:page]
+  end
 end

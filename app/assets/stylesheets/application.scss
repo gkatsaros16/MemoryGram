@@ -282,6 +282,18 @@ body {
   }
 }
 
+#paginator-notifications {
+  color: #4090DB;
+  height: 25px;
+  width: 100px;
+  margin: 60px auto 40px;
+  position: relative;
+  display: table;
+  :hover {
+    border: 1px solid #2D6DA8;
+  }
+}
+
 #load_more {
   display: table-cell;
   font-size: 12px;
@@ -430,11 +442,30 @@ body {
   margin-bottom: 26px;
   margin-right: 13px;
   margin-left: 13px;
-
 }
 
-
-
+.notification-index-list {
+  margin-top: 2em;
+  list-style: none;
+  .unread {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background-color: #e5f6fe;
+  }
+  li {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background-color: white;
+  }
+  hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 80%;
+  }
+  a{
+    padding-left: 15%;
+  }
+}
 
 
 // .links {

@@ -12,7 +12,7 @@
     <%= render current_user.notifications.order('created_at DESC').first(15) %>
     <li class="divider" role="separator"></li>
     <li class="text-center">
-      <%= link_to 'View all', root_path %>
+      <%= link_to 'View all', notifications_path %>
     </li>
   </ul>
 </div>
