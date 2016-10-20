@@ -8,7 +8,7 @@ feature 'Unauthenticated user must sign in to access any feature' do
   end
   scenario 'user clicks a button' do
     visit '/'
-    click_link('MemoryGram')
+    click_link('MyStream')
     expect(current_path).to have_content("users/sign_in")
     expect(page).to have_content("You need to sign in or sign up before continuing.")
   end
