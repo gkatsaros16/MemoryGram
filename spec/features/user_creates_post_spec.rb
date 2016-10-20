@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Creating posts' do
-  background do
+  before do
     @user = create :user
     visit '/'
     sign_in_with @user

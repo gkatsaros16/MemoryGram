@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user! #devis
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :like]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like, :likers]
   before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.all.order('created_at DESC').page params[:page]
+    @posts = Post.all.order('created_at DESC').page(params[:page]).per(12)
   end
 
   def new
@@ -57,6 +57,7 @@ class PostsController < ApplicationController
 
   def like
     if @post.liked_by current_user
+      create_notification @post
       respond_to do |format|
         format.html { redirect_to :back }
         format.js
@@ -64,7 +65,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def likers
+    @likers = @post.votes_for.up.by_type(User).voters
+  end
+
   private
+
+  def create_notification(post)
+    return if post.user.id == current_user.id
+    Notification.create(user_id: post.user.id,
+                        notified_by_id: current_user.id,
+                        post_id: post.id,
+                        identifier: post.id,
+                        notif_type: 'like')
+  end
 
   def post_params
     params.require(:post).permit(:image, :caption, :link, :post_type)

@@ -27,21 +27,32 @@ body {
 /* ## NAVBAR CUSTOMISATIONS ## */
 
 .navbar-brand {
+  padding-top: 20px;
+  padding-left: 0px;
  a {
-   color: #125688;
+   color: black;
+   font-size: 20px;
  }
 }
 
 .navbar-default {
  background-color: #fff;
- height: 54px;
+ height: 65px;
  .navbar-nav li a {
-   color: #125688;
+   color: black;
+   border: none;
+   padding-top: 6px;
+   padding-bottom: 0px;
+   padding-right: 15px;
+   margin: auto;
+    .nav-text {
+      font-size: 10px;
+    }
   }
 }
 
 .navbar-container {
- width: 70%;
+ width: 45%;
  margin: 0 auto;
 }
 
@@ -160,8 +171,11 @@ body {
   border: 1px solid gray;
 }
 
+.glyphicon {
+  font-size: 19px;
+}
+
 .glyphicon-heart-empty {
- color: black;
  font-size: 35px;
  float: left;
 }
@@ -199,6 +213,7 @@ body {
 
 .alert {
  margin-bottom: 0px;
+ text-align: center;
 }
 
 .edit-links {
@@ -264,6 +279,18 @@ body {
   :hover {
     border: 1px solid #2D6DA8;
     border-radius: 50%;
+  }
+}
+
+#paginator-notifications {
+  color: #4090DB;
+  height: 25px;
+  width: 100px;
+  margin: 60px auto 40px;
+  position: relative;
+  display: table;
+  :hover {
+    border: 1px solid #2D6DA8;
   }
 }
 
@@ -382,6 +409,83 @@ body {
   text-decoration: none;
   color: red;
 }
+
+.notification-dropdown {
+  margin-top: 10px;
+  button {
+    border: none;
+    padding: 0px;
+  }
+}
+
+.glyphicon-fire {
+  font-size: 25px;
+  margin-bottom: 26px;
+  margin-right: 13px;
+  margin-left: 13px;
+}
+
+.unread {
+  background-color: #e5f6fe;
+}
+
+.count {
+  float: left;
+  top: 20px;
+  left: 15px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.red {
+  color: red;
+  font-size: 25px;
+  margin-bottom: 26px;
+  margin-right: 13px;
+  margin-left: 13px;
+}
+
+.notification-index-list {
+  margin-top: 2em;
+  list-style: none;
+  .unread {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background-color: #e5f6fe;
+  }
+  li {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background-color: white;
+  }
+  hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 80%;
+  }
+  a{
+    padding-left: 15%;
+  }
+}
+
+
+.likers-index-list {
+  margin-top: 2em;
+  list-style: none;
+  li {
+
+    background-color: white;
+  }
+  hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 50%;
+  }
+  a{
+    padding-left: 40%;
+
+  }
+}
+
 
 // .links {
 //   border: 2px solid black;

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Edits posts' do
-  background do
+  before do
     @user = FactoryGirl.create(:user)
     @user_2 = FactoryGirl.create(:user)
     sign_in_with @user

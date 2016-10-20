@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="post">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="notification-stream text-center">
+          <h2><%= "Liked your post" %></h2>
+        </div>
+        <ul class="likers-index-list">
+          <div class='liker-item'>
+            <% @likers.each do |liker| %>
+              <%= link_to liker.user_name, profile_path(liker.user_name) %>
+              <hr>
+            <% end %>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

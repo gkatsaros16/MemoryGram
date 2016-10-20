@@ -7,17 +7,30 @@
         <span class="icon-bar"></span>
       </button>
       <div class="navbar-brand">
-        <%= link_to "MemoryGram", root_path %>
+        <%= link_to "MyStream", root_path %>
+        <% if user_signed_in? %>
+        <%= "::" %>
+        <%= link_to "#{current_user.user_name}", profile_path(current_user.user_name) %>
+        <% end %>
       </div>
     </div>
     <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li>
-            <%= link_to "New Post", new_post_path %>
+            <%= render 'notifications/notification_dropdown' %>
           </li>
           <li>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+            <%= link_to new_post_path, class: "btn btn-default navbtn" do %>
+            <i class="glyphicon glyphicon-camera"></i><br>
+            <n class="nav-text">New Post</n>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-default navbtn" do %>
+            <i class="glyphicon glyphicon-log-out"></i><br>
+            <n class="nav-text">Logout</n>
+            <% end %>
           </li>
         <% else %>
           <li>

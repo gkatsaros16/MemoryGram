@@ -1,8 +1,5 @@
 require 'rails_helper.rb'
 
-# As an unauthenticated user
-# visiting any route redirects to the homepage.
-
 feature 'Unauthenticated user must sign in to access any feature' do
   scenario 'user creates a new post.' do
     visit '/'
