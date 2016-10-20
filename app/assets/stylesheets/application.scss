@@ -468,6 +468,25 @@ body {
 }
 
 
+.likers-index-list {
+  margin-top: 2em;
+  list-style: none;
+  li {
+
+    background-color: white;
+  }
+  hr {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 50%;
+  }
+  a{
+    padding-left: 40%;
+
+  }
+}
+
+
 // .links {
 //   border: 2px solid black;
 //   display: flex;

@@ -1,3 +1,7 @@
 <div class="likes" id="likes_<%= post.id %>">
-  <%= display_likes post %>
+  <% if post.votes_for.up.size < 8 %>
+    <%= display_likes post %>
+  <% else %>
+    <%= link_to display_likes(post), likers_path(post.user.user_name, post.id) %>
+  <% end %>
 </div>
