@@ -53,6 +53,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pg'
 
 gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 
 gem 'simple_form'
 
@@ -69,3 +70,4 @@ gem 'jquery-turbolinks'
 gem 'acts_as_votable'
 gem 'capybara'
 gem "capybara-webkit"
+gem 'dotenv-rails'
