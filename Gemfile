@@ -67,5 +67,5 @@ gem 'jquery-turbolinks'
 
 gem 'acts_as_votable'
 gem 'capybara'
-gem "capybara-webkit"
+
 gem 'dotenv-rails'
