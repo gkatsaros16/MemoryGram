@@ -13,17 +13,23 @@
         <span>
           <% if @user == current_user %>
             <%= link_to 'Edit Profile', edit_profile_path(@user.user_name), class: 'btn edit-button' %>
-        <% end %>
+          <% else %>
+            <% if current_user_is_following(current_user.id, @user.id ) %>
+              <%= link_to 'Following', unfollow_user_path, remote: true, class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
+            <% else %>
+              <%= link_to 'Follow', follow_user_path, remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %>
+            <% end %>
+          <% end %>
         </span>
+      </div>
+      <div class="user-statistics text-center">
+        <p>
+          <%= pluralize @user.posts.count, 'post' %> | <%= pluralize @user.followers.count, 'follower' %> | <%= pluralize @user.following.count, 'following' %>
+        </p>
       </div>
       <p class="profile-bio">
         <%= @user.bio %>
       </p>
-      <div class="user-statistics">
-        <p>
-          <%= pluralize @user.posts.count, 'post' %>
-        </p>
-      </div>
     </div>
   </div>
 </div>

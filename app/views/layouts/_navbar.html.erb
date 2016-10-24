@@ -21,6 +21,12 @@
             <%= render 'notifications/notification_dropdown' %>
           </li>
           <li>
+            <%= link_to browse_posts_path, class: "btn btn-default navbtn" do %>
+            <i class="glyphicon glyphicon-list-alt"></i><br>
+            <n class="nav-text">Browse All</n>
+            <% end %>
+          </li>
+          <li>
             <%= link_to new_post_path, class: "btn btn-default navbtn" do %>
             <i class="glyphicon glyphicon-camera"></i><br>
             <n class="nav-text">New Post</n>
