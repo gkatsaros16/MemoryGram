@@ -82,10 +82,15 @@ body {
    font-size: 15px;
    line-height: 18px;
    .post-type-article {
+    a {
+      color: #8dd69d;
+    }
     float: right;
     color: #8dd69d;
    }
    .post-type-image {
+    a { color: #9ecaed;
+    }
     float: right;
     color: #9ecaed;
    }
