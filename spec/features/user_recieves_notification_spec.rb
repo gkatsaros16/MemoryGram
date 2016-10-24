@@ -6,7 +6,7 @@ feature "post owner receives notification when user comments on post." do
     @user_2 = FactoryGirl.create(:user)
     @post = FactoryGirl.create(:post, user_id: @user.id)
     sign_in_with @user_2
-    visit '/'
+    visit browse_posts_path
     fill_in 'comment[content]', with: 'Nice pic bro.'
     click_button 'Submit Comment'
   end

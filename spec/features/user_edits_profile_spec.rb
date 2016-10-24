@@ -24,6 +24,7 @@ feature 'editing user profiles' do
   end
 
   scenario 'a user cannot change someone elses profile picture' do
+    visit browse_posts_path
     first(:link, @user_2.user_name).click
 
     expect(page).to_not have_content('Edit Profile')

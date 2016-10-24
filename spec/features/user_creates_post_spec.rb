@@ -12,6 +12,7 @@ feature 'Creating posts' do
     attach_file('post[image]', "spec/files/images/tester.jpg")
     fill_in 'post[caption]', with: "check check #tester"
     click_button 'Create Post'
+    visit browse_posts_path
     expect(page).to have_content("#tester")
     expect(page).to have_css("img[src*='tester']")
     expect(page).to have_content(@user.user_name)
