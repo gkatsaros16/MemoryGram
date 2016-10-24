@@ -8,7 +8,7 @@
       <%= link_to "#{notification.notified_by.user_name} #{notification.notif_type}ed on your post #{time_ago_in_words(notification.created_at)} ago", link_through_path(notification) %>
     </li>
   <% end %>
-<% else %>
+<% elsif notification.notif_type == 'like' %>
   <% if notification.read %>
     <li class='like-notif'>
       <%= link_to "#{notification.notified_by.user_name} #{notification.notif_type}d your post #{time_ago_in_words(notification.created_at)} ago", link_through_path(notification) %>
@@ -16,6 +16,16 @@
   <% else %>
     <li class="unread like-notif">
       <%= link_to "#{notification.notified_by.user_name} #{notification.notif_type}d your post #{time_ago_in_words(notification.created_at)} ago", link_through_path(notification) %>
+    </li>
+  <% end %>
+<% else %>
+  <% if notification.read %>
+    <li class='like-notif'>
+      <%= link_to "#{notification.notified_by.user_name} #{notification.notif_type}ed your #{time_ago_in_words(notification.created_at)} ago", link_through_path(notification) %>
+    </li>
+  <% else %>
+    <li class="unread like-notif">
+      <%= link_to "#{notification.notified_by.user_name} #{notification.notif_type}ed you #{time_ago_in_words(notification.created_at)} ago", link_through_path(notification) %>
     </li>
   <% end %>
 <% end %>

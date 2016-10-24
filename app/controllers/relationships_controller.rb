@@ -2,6 +2,8 @@ class RelationshipsController < ApplicationController
   def follow_user
     @user = User.find_by(user_name: params[:user_name])
     if current_user.follow(@user.id)
+      binding.pry
+      create_notification @user
       respond_to do |format|
         format.html { redirect_to root_path  }
         format.js
@@ -17,5 +19,14 @@ class RelationshipsController < ApplicationController
         format.js
       end
     end
+  end
+
+  private
+  def create_notification(user)
+    return if user.id == current_user.id
+    Notification.create(user_id: user.id,
+                        notified_by_id: current_user.id,
+                        identifier: user.id,
+                        notif_type: 'follow')
   end
 end
