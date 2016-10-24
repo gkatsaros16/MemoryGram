@@ -334,6 +334,9 @@ body {
 
 .user-name-and-follow {
   display: inline;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 10px;
 }
 
 .profile-user-name {
@@ -421,6 +424,7 @@ body {
   button {
     border: none;
     padding: 0px;
+    padding-left: 10px
   }
 }
 
@@ -428,7 +432,7 @@ body {
   font-size: 25px;
   margin-bottom: 26px;
   margin-right: 13px;
-  margin-left: 13px;
+  margin-left: 0px;
 }
 
 .unread {
@@ -439,7 +443,7 @@ body {
   float: left;
   top: 20px;
   left: 15px;
-  margin-top: 10px;
+  margin-top: 0px;
   font-size: 20px;
 }
 .red {
@@ -447,7 +451,7 @@ body {
   font-size: 25px;
   margin-bottom: 26px;
   margin-right: 13px;
-  margin-left: 13px;
+  margin-left: 0px;
 }
 
 .notification-index-list {
@@ -495,7 +499,7 @@ body {
   text-transform: uppercase;
   border-color: #4090db;
   color: #4090db;
-  margin-left: 20px;
+  top: 5px;
   &:visited, &:focus, &:hover {
     border-color: #2D6396;
     color: #2D6396;
@@ -507,7 +511,6 @@ body {
   border-color: #66bd2b;
   background-color: #66bd2b;
   color: white;
-  margin-left: 20px;
   &:visited, &:focus, &:hover {
     border-color: #47821F;
     background-color: #47821F;

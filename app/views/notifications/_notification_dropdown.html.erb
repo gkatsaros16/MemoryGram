@@ -2,9 +2,9 @@
   <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="dropdownMenu1" type="button" aria-haspopup="true" aria-expanded="true">
     <% if current_user.notifications.where(read: false).count > 0 %>
       <n class="count"><%= current_user.notifications.where(read: false).count %></n>
-      <span class="glyphicon glyphicon-fire red" id="fire"></span>
+      <i class="glyphicon glyphicon-fire red" id="fire"></i>
     <% else %>
-      <span class="glyphicon glyphicon-fire" id="fire"></span>
+      <i class="glyphicon glyphicon-fire" id="fire"></i>
     <% end %>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
