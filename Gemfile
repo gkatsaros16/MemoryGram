@@ -69,3 +69,4 @@ gem 'acts_as_votable'
 gem 'capybara'
 
 gem 'dotenv-rails'
+gem 'rails_12factor', group: :production
