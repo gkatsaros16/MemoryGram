@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user! #devis
-  before_action :set_post, only: [:show, :edit, :update, :destroy, :like, :likers]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :like, :unlike, :likers]
   before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
@@ -62,6 +62,15 @@ class PostsController < ApplicationController
   def like
     if @post.liked_by current_user
       create_notification @post
+      respond_to do |format|
+        format.html { redirect_to :back }
+        format.js
+      end
+    end
+  end
+
+  def unlike
+    if @post.unliked_by current_user
       respond_to do |format|
         format.html { redirect_to :back }
         format.js
