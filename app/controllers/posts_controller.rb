@@ -68,10 +68,12 @@ class PostsController < ApplicationController
 
   def unlike
     if @post.unliked_by current_user
+      notification = Notification.where(notified_by_id: current_user.id, post_id: @post.id, notif_type: 'like')
       respond_to do |format|
         format.html { redirect_to :back }
         format.js
       end
+      Notification.destroy(notification.ids[0])
     end
   end
 
@@ -81,6 +83,9 @@ class PostsController < ApplicationController
 
   private
 
+  def destroy_notification(notification)
+
+  end
   def create_notification(post)
     return if post.user.id == current_user.id
     Notification.create(user_id: post.user.id,
