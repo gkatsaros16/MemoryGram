@@ -31,13 +31,14 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = @post.comments.find(params[:id])
-
+    notification = Notification.where(notified_by_id: current_user.id, post_id: @post.id, notif_type: 'comment')
     if @comment.user.id == current_user.id
       @comment.destroy
       respond_to do |format|
         format.html { redirect_to root_path }
         format.js
       end
+      Notification.destroy(notification.ids[0])
     end
     # flash[:success] = "Post successfully deleted!"
   end
