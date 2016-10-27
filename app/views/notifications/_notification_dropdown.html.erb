@@ -8,7 +8,9 @@
     <% end %>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li class="dropdown-header text-center">Notifications</li>
+    <div class="header-custom">
+      <li class="dropdown-header text-center"> <p class='header-notif'>Notifications</p> | <p class="read-all text-center"><%= link_to 'Read All', read_all_path %></p> </li>
+    </div>
     <%= render current_user.notifications.order('created_at DESC').first(15) %>
     <li class="divider" role="separator"></li>
     <li class="text-center">

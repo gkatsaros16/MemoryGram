@@ -77,7 +77,9 @@ class PostsController < ApplicationController
         format.html { redirect_to :back }
         format.js
       end
-      Notification.destroy(notification.ids[0])
+      if !current_user
+        Notification.destroy(notification.ids[0])
+      end
     end
   end
 

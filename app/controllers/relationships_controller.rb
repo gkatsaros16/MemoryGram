@@ -18,7 +18,9 @@ class RelationshipsController < ApplicationController
         format.html { redirect_to root_path  }
         format.js
       end
-      Notification.destroy(notification.ids[0])
+      if !current_user
+        Notification.destroy(notification.ids[0])
+      end
     end
   end
 

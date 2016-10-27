@@ -41,8 +41,9 @@ body {
  .navbar-nav li a {
    color: black;
    border: none;
-   padding-top: 6px;
    padding-bottom: 0px;
+   padding-top: 0px;
+   padding-left: 15px;
    padding-right: 15px;
    margin: auto;
     .nav-text {
@@ -431,15 +432,12 @@ body {
   margin-top: 10px;
   button {
     border: none;
-    padding: 0px;
     padding-left: 10px
   }
 }
 
 .glyphicon-fire {
   font-size: 25px;
-  margin-bottom: 26px;
-  margin-right: 13px;
   margin-left: 0px;
 }
 
@@ -457,8 +455,6 @@ body {
 .red {
   color: red;
   font-size: 25px;
-  margin-bottom: 26px;
-  margin-right: 13px;
   margin-left: 0px;
 }
 
@@ -536,9 +532,6 @@ body {
  max-height: 400px;
 }
 
-.backdrop {
-  background-color: white;
-}
 
 .img-responsive-custom {
     display: block;
@@ -547,10 +540,32 @@ body {
     margin: auto;
 }
 
+.dropdown-header {
+  display: inline-flex;
+  padding: 3px 20px;
+  font-size: 12px;
+  line-height: 1.42857143;
+  color: #777777;
+  white-space: nowrap;
+}
 
+.header-notif {
+  padding-right: 15px;
+}
 
-// .links {
-//   border: 2px solid black;
-//   display: flex;
-//   display: inline-block;
-// }
+.dropdown-menu > li > a {
+    display: block;
+    padding: 20px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333333;
+    white-space: nowrap;
+  }
+.header-custom {
+  text-align: center;
+}
+
+a.btn.btn-default.navbtn {
+    padding-top: 15px;
+}
