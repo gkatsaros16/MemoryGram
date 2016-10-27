@@ -40,7 +40,6 @@ class CommentsController < ApplicationController
       end
       Notification.destroy(notification.ids[0])
     end
-    # flash[:success] = "Post successfully deleted!"
   end
 
   private

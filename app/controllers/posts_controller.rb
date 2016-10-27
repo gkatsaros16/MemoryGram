@@ -4,11 +4,11 @@ class PostsController < ApplicationController
   before_action :owned_post, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.of_followed_users(current_user.following).order('created_at DESC').page(params[:page]).per(12)
+    @posts = Post.of_followed_users(current_user.following).order('created_at DESC').page(params[:page]).per(8)
   end
 
   def browse
-    @posts = Post.all.order('created_at DESC').page(params[:page]).per(12)
+    @posts = Post.all.order('created_at DESC').page(params[:page]).per(8)
   end
 
   def new
@@ -18,7 +18,11 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params) # find out what build does
     if @post.save
+      if !current_user.followers.include?(current_user)
+        current_user.follow(@post.user_id)
+      end
       flash[:success] = "Your post has been created!"
+
       redirect_to posts_path
     else
       flash[:alert] = "Your new post couldn't be created! Please check the form."

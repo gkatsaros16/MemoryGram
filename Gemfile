@@ -70,3 +70,5 @@ gem 'capybara'
 
 gem 'dotenv-rails'
 gem 'rails_12factor', group: :production
+gem 'httparty'
+gem "redd", "~> 0.7"

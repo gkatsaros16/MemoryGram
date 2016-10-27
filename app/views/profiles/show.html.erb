@@ -24,7 +24,7 @@
       </div>
       <div class="user-statistics text-center">
         <p>
-          <%= pluralize @user.posts.count, 'post' %> | <%= pluralize @user.followers.count, 'follower' %> | <%= pluralize @user.following.count, 'following' %>
+          <%= pluralize @user.posts.count, 'post' %> | <%= pluralize @user.followers.count, 'follower' %> | <%= @user.following.count %> following
         </p>
       </div>
       <p class="profile-bio">
@@ -45,11 +45,11 @@
                 <div class="show-picture">
                 <% if post.post_type == 'Image' %>
                   <div class="image center-block glowing-border-image">
-                    <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
+                    <%= link_to (image_tag post.image.url(:medium), class:'img-responsive-custom'), post_path(post) %>
                   </div>
                 <% else %>
                   <div class="image center-block glowing-border-article">
-                    <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
+                    <%= link_to (image_tag post.image.url(:medium), class:'img-responsive-custom'), post_path(post) %>
                   </div>
                 <% end %>
               </div>
