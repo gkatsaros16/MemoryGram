@@ -559,6 +559,10 @@ body {
   padding-right: 15px;
 }
 
+p {
+  display: -webkit-inline-box;
+}
+
 .dropdown-menu > li > a {
     display: block;
     padding: 20px 20px;
