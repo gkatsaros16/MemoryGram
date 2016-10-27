@@ -24,8 +24,10 @@ body {
  height: 100%
 }
 
-/* ## NAVBAR CUSTOMISATIONS ## */
 
+.container {
+  width: 100%;
+}
 .navbar-brand {
   padding-top: 20px;
   padding-left: 0px;
@@ -179,6 +181,10 @@ body {
 
 .glyphicon {
   font-size: 19px;
+}
+
+.flash {
+  width: 100%;
 }
 
 .glyphicon-heart-empty {

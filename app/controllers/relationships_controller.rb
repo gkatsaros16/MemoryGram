@@ -13,7 +13,9 @@ class RelationshipsController < ApplicationController
   def unfollow_user
     @user = User.find_by(user_name: params[:user_name])
     if current_user.unfollow(@user.id)
-      notification = Notification.where(notified_by_id: current_user.id, identifier: @user.id, notif_type: 'follow')
+      notification = Notification.where(notified_by_id: current_user.id,
+                                        identifier: @user.id,
+                                        notif_type: 'follow')
       respond_to do |format|
         format.html { redirect_to root_path  }
         format.js

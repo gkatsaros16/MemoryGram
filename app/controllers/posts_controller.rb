@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user! #devis
+  before_action :authenticate_user!
   before_action :set_post, only: [:show, :edit, :update, :destroy, :like, :unlike, :likers]
   before_action :owned_post, only: [:edit, :update, :destroy]
 
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params) # find out what build does
+    @post = current_user.posts.build(post_params)
     if @post.save
       if !current_user.followers.include?(current_user)
         current_user.follow(@post.user_id)
@@ -35,11 +35,9 @@ class PostsController < ApplicationController
 
   def edit
     @prevent = false
-    # @post = Post.find(params[:id])
   end
 
   def update
-    # @post = Post.find(params[:id])
     if @post.update(post_params)
       flash[:success] = "Updated successfully!"
       redirect_to post_path(@post)
@@ -50,7 +48,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    # @post = Post.find(params[:id])
     if @post.destroy
       flash[:success] = "Post successfully deleted!"
       redirect_to posts_path
@@ -88,10 +85,7 @@ class PostsController < ApplicationController
   end
 
   private
-
-  def destroy_notification(notification)
-
-  end
+  
   def create_notification(post)
     return if post.user.id == current_user.id
     Notification.create(user_id: post.user.id,

@@ -1,58 +1,6 @@
 <nav class="navbar navbar-default">
   <div class="navbar-container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" data-target="#bs-navbar-collapse-1" data-toggle="collapse" type="button">
-        <span class="sr-onlyToggle">Navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <div class="navbar-brand">
-        <%= link_to "MyStream", root_path %>
-        <% if user_signed_in? %>
-        <%= "::" %>
-        <%= link_to "#{current_user.user_name}", profile_path(current_user.user_name) %>
-        <% end %>
-      </div>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li>
-            <%= render 'notifications/notification_dropdown' %>
-          </li>
-          <li>
-            <%= link_to browse_posts_path, class: "btn btn-default navbtn" do %>
-            <i class="glyphicon glyphicon-list-alt"></i><br>
-            <n class="nav-text">AllStream</n>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to posts_path, class: "btn btn-default navbtn" do %>
-            <i class="glyphicon glyphicon-list"></i><br>
-            <n class="nav-text">MyStream</n>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to new_post_path, class: "btn btn-default navbtn" do %>
-            <i class="glyphicon glyphicon-camera"></i><br>
-            <n class="nav-text">New Post</n>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-default navbtn" do %>
-            <i class="glyphicon glyphicon-log-out"></i><br>
-            <n class="nav-text">Logout</n>
-            <% end %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to "Login", new_user_session_path %>
-          </li>
-          <li>
-            <%= link_to "Register", new_user_registration_path %>
-        </li>
-        <% end %>
-      </ul>
-    </div>
+  <%= render "layouts/nav_left" %>
+  <%= render "layouts/nav_right" %>
   </div>
 </nav>

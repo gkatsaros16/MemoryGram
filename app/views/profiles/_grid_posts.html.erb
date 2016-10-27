@@ -1,0 +1,36 @@
+<div class="containter-fluid coverall">
+  <% @posts.each do |post| %>
+    <div class="col-md-4">
+      <div class="posts-wrapper show-pic">
+        <div class="post">
+          <div class="post-head">
+          </div>
+            <div class="show-picture">
+            <% if post.post_type == 'Image' %>
+              <div class="image center-block glowing-border-image">
+                <%= link_to (image_tag post.image.url(:medium), class:'img-responsive-custom'), post_path(post) %>
+              </div>
+            <% else %>
+              <div class="image center-block glowing-border-article">
+                <%= link_to (image_tag post.image.url(:medium), class:'img-responsive-custom'), post_path(post) %>
+              </div>
+            <% end %>
+          </div>
+          <div class="post-bottom">
+            <div class="caption">
+              <div class="caption-content">
+                <p class="text-center">
+                  <% if post.caption.length > 30 %>
+                    <%= "#{post.caption[0..30]}..." %>
+                  <% else %>
+                     <%= post.caption %>
+                  <% end %>
+                </p>
+              </div>
+            </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  <% end %>
+</div>
