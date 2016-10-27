@@ -34,7 +34,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @prevent = false
   end
 
   def update
@@ -85,7 +84,7 @@ class PostsController < ApplicationController
   end
 
   private
-  
+
   def create_notification(post)
     return if post.user.id == current_user.id
     Notification.create(user_id: post.user.id,
